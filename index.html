@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JUEGO 1</title>
+    </head>
+    <style>
+        @font-face {
+        font-family:'blackjack';
+        src:url('fonts/1942.ttf')
+        }
+        @font-face{
+        font-family:'carta';
+        src:url("fonts/cards-webfont.woff")
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            
+        }
+        #container{
+            margin: 0 auto;
+            color: pink;
+            width: 90%;
+        } 
+         #tapete {
+            background-image: url(fondo.jpg);
+            color: black;
+            min-height: 500px;
+            width: 80%;
+            border: 10px solid black;
+            text-align: center;
+            align-items: center;
+            }
+        #tapete p{
+            color: aliceblue;
+            font-family: console, century gothic;
+            font-weight: bolder;
+            text-shadow: 5px 5px 5px black;
+            font-size: 20px;
+            ;
+        }
+        #display {
+            background-color: black;
+            color:aliceblue;
+            min-height: 50px;
+            width: 80%;
+            border:5px solid white;
+            font-size: 25px;
+            font-family: console, 'century gothic';
+            text-align: center;
+        }     
+         #croupier, #jugador {
+            display: inline-block;
+            text-align: center;
+             margin-left: 5em;
+             width: 10%;
+        }
+              h1{
+        background-color: darkred;
+        color: aliceblue;
+        width: 80%;
+        display: inline-block;
+        text-align: center;
+        border: 10px solid black;
+        text-transform: uppercase;
+        font-family: 'blackjack';
+
+        }
+        #croupier:after{
+            content: 'CROUPIER';
+            color: aliceblue;
+            position: relative;
+            display: inline-block;
+            transform-origin: 0;
+            transform: rotate(-90deg);
+            font-family: console, 'century gothic';
+            font-size: 25px;
+            right: 50px;
+            bottom:150px;
+            font-weight: bolder;
+            text-shadow: 5px 5px 5px black;
+            
+        }
+           #jugador:after{
+            content: 'JUGADOR';
+            color: aliceblue;
+            position: relative;
+            display: inline-block;
+            transform-origin: 0;
+            transform: rotate(90deg);
+            font-family: console, 'century gothic';
+            font-size: 25px;
+            right: -250px;
+            bottom:250px;
+            font-weight: bolder;
+            text-shadow: 5px 5px 5px black;
+        }
+        button {
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: darkolivegreen;
+            border: none;
+            float: left;
+            padding: 8px 15px;
+            font-size: 16px;
+            color:aliceblue;
+            vertical-align: top;
+            
+        }
+        button:hover{
+            background-color: whitesmoke;
+            color: black;
+        }
+      @keyframes apareceCarta {
+          from {
+            left: -150px;
+            top: -100px;
+            opacity: 0;
+              }
+
+          to {
+            left: 0;
+            top: 0;
+            opacity: 1;
+              }
+            
+        }
+        #croupier img {
+            position: relative;
+            animation: apareceCarta;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            box-shadow: 10px 10px 19px black;
+            
+            }
+@keyframes apareceCarta2 {
+          from {
+            left: 150px;
+            top: -100px;
+            opacity: 0;
+              }
+
+          to {
+            left: 0;
+            top: 0;
+            opacity: 1;
+              }
+            
+        }
+        #jugador img {
+            position: relative;
+            animation: apareceCarta2;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            box-shadow: 10px 10px 19px black;
+            }
+       
+    </style>
+<body>
+  <div id="container">
+      <h1>Carta mas alta       
+         <div id="botones">
+           <button id='cartaA' type="button">start</button>
+             <button id='mostrarB'type="button">MOSTRAR BARAJA</button>
+
+       </div>
+       </h1>
+
+       <div id="display">
+        <p> ¡VAMOS A JUGAR!</p>
+                    
+       </div>
+       <div id="tapete">
+          <div class="croup">            
+               <div id="croupier">
+               </div>
+           </div>
+           <div class="jug">
+               <div id="jugador">
+               </div>
+           </div>
+           
+       </div>
+       <div id="mostrarBaraja">
+               
+           </div>
+       
+   </div>
+    <script src='baraja.js'></script>
+    <script src='jugador.js'></script>
+    <script src='croupier.js'></script>
+    <script src='carta-Mas-Alta.js'></script>
+    <script src='mostrarBaraja.js'></script>
+  
+</body>
+</html>
